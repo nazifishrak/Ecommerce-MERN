@@ -5,7 +5,7 @@ const createError = require("http-errors");
 const xssClean = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 const app = express();
-const PORT = 3000;
+
 
 const rateLimiter = rateLimit({
   windowMS: 1000 * 60, //1 minute

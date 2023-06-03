@@ -8,4 +8,4 @@
 8. Express Error Handling Middleware ->body parser
 9. Handling HTTP Errors
 10. Securing API-> xss clean, express-rate-limit
-11. Environment variables
+11. Environment variables  -> npm i dotenv

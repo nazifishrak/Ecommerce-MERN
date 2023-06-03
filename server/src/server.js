@@ -1,6 +1,6 @@
 //Creating express app
-const app = require('./app.js');
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`server listening at port ${PORT}`);
+const app = require("./app.js");
+const { serverPort } = require("./secret.js");
+app.listen(serverPort, () => {
+  console.log(`server listening at port ${serverPort}`);
 });
