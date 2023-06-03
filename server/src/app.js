@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const createError = require("http-errors");
 const xssClean = require("xss-clean");
 const rateLimit = require("express-rate-limit");
+const userRouter = require("./routers/userRouter");
+// const userRouter = require("./routers/userRouter");
 const app = express();
-
 
 const rateLimiter = rateLimit({
   windowMS: 1000 * 60, //1 minute
@@ -18,7 +19,7 @@ app.use(rateLimiter);
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use("/api/user",userRouter);
 //Logged in Middleware
 const isLoggedIn = (req, res, next) => {
   const login = true;
@@ -28,11 +29,6 @@ const isLoggedIn = (req, res, next) => {
     res.status(401).json({ message: "Unauthorised user: please login first" });
   }
 };
-app.get("/api/user", isLoggedIn, (req, res) => {
-  res.status(200).send({
-    message: "User profile is returned",
-  });
-});
 
 app.get("/test", (req, res) => {
   res.status(200).send({ message: "GET: api working properly" });

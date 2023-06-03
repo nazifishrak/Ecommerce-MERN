@@ -9,3 +9,4 @@
 9. Handling HTTP Errors
 10. Securing API-> xss clean, express-rate-limit
 11. Environment variables  -> npm i dotenv
+12. MVC Architecture MODEL, VIEW, CONTROLLER(routing logic)
