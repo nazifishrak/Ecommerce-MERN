@@ -30,21 +30,7 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
-app.get("/test", (req, res) => {
-  res.status(200).send({ message: "GET: api working properly" });
-});
 
-app.post("/test", (req, res) => {
-  res.status(200).send({ message: "POST: api working properly" });
-});
-
-app.put("/test", (req, res) => {
-  res.status(200).send({ message: "PUT: api working properly" });
-});
-
-app.delete("/test", (req, res) => {
-  res.status(200).send({ message: "DEL: api working properly" });
-});
 
 //client error handling
 
