@@ -5,6 +5,8 @@ const createError = require("http-errors");
 const xssClean = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 const userRouter = require("./routers/userRouter");
+const testRouter = require("./routers/testRouter");
+
 // const userRouter = require("./routers/userRouter");
 const app = express();
 
@@ -20,6 +22,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/user",userRouter);
+app.use(testRouter)
 //Logged in Middleware
 const isLoggedIn = (req, res, next) => {
   const login = true;
